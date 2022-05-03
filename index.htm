@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet"> 
+    <style>
+
+  visibility: visible;
+
+
+
+.bbbox{
+width: 50%; height: 33px; 
+text-align: center;
+margin: auto;
+word-wrap: break-word;
+}
+
+.bbox{
+text-align: center;margin: auto;
+word-wrap: break-word;
+width: 75%; height: 150px; border:1px solid yellow;
+}
+
+
+
+.in{
+
+display: none;
+}
+
+
+.inn{
+visibility: hidden;
+}
+
+</style>
+  </head>
+  <body style="background-color:#0d0c22; ">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+
+
+<div style="height:53px;width: 55px;margin-left: 33px; align-items:  center; display: flex; justify-content: center;">
+	<i data-toggle="modal" data-target="#exampleModalCenter" class="" style="margin-top: 73px;">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="height: 53px;width: 53px;color: #73dcff;">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg></i>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelCenterTitle" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="height:100%;width:76%;margin: auto;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Notes <i><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" style="height:26px;width:26px;">
+  <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+</svg></i></h5>
+        <button type="button" class="close btn btn-secondary" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex justify-content-center ">
+        <input type="text" name="" id="inp1" placeholder="title"style="  border: 0;
+    outline: 0;
+    border-bottom: 2px solid #f7d32f; font-family: 'Oleo Script', cursive;"  ></div>
+        <div class="d-flex justify-content-center ">
+ <div class="form-group">
+    <label for="exampleFormControlTextarea1">Body</label>
+    <textarea class="form-control" id="bod" rows="3" style="   font-family: 'Oleo Script', cursive;"></textarea>
+  </div></div>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="ho()">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+    <script >
+     var d=document.createElement('div');
+     var ho=()=>{
+
+
+      
+var i=document.getElementById("inp1").value;
+console.log(i);
+
+
+
+ var i1=document.getElementById("bod").value;
+console.log(i1);
+
+
+d.setAttribute("class","d-flex  justify-content-around flex-wrap py-3");//box1
+d.innerHTML=`<div style="width:100%; height: 100%;border:8px solid #73dcff;border-radius:8px ; inline-size: 60%;
+    overflow-wrap: break-word;margin-top: 43px;" >
+    <p class="text-center" id="pp" style="color:white;font-family: 'Oleo Script', cursive; font-size:22px;"></p>
+
+<div class="d-flex justify-content-center" >
+<textarea  rows="3"class="in" id="inp"  cols="20" style="border:none; " ></textarea></div>
+
+
+  
+  <p id="pp1" class="text-center"style="color:white;   font-family: 'Oleo Script', cursive;font-size:22px;"> </p>
+  <button onclick="rem()" class="btn btn-danger btn-sm">del🗑</button>
+  <button onclick="edi(this)" class="btn btn-secondary btn-sm">edit✏️</button>
+  
+</div>`;
+
+document.body.appendChild(d);
+
+
+var p=document.getElementById("pp");
+p.innerHTML=i;
+
+
+var p1p=document.getElementById("pp1");
+p1p.innerHTML=i1;
+
+/*
+var o=document.createElement("div");
+
+
+
+o.setAttribute("class","bbox");
+var ed=document.createElement("div");
+ed.setAttribute("class","bbbox");
+
+
+
+var child = d.children[1];
+var child = d.firstElementChild;
+console.log(d.children[1]);
+
+var bt=document.createElement("button");
+
+let a=["data-toggle","data-target","class"];
+
+let a1=["modal","#exampleModalCenter","btn btn-primary"];
+
+for (var j = 0; j < 3; j++) {
+ bt.setAttribute(a[j],a1[j]);
+}
+//bt.setAttribute("data-toggle","modal");
+
+//="" data-target="#exampleModalCenter"
+
+ed.innerHTML=i;
+o.innerHTML=i1;
+d.appendChild(bt);
+d.appendChild(ed);
+d.appendChild(o);
+
+
+var d=document.getElementById('bb');
+
+
+*/
+}
+  function rem() {
+  d.remove();
+
+}
+
+
+
+function edi(e) {
+var i=document.getElementById("inp");
+var i0=document.getElementById("inp1");
+
+var pp=document.getElementById("pp");
+
+if(e.innerHTML==="edit✏️"){
+
+e.innerHTML="save💾"
+e.setAttribute("class","btn-primary btn-sm");
+i.classList.toggle("in");
+
+i0.style.visibility="visibile";
+}
+
+
+ 
+
+else if(e.innerHTML==="save💾"){
+
+e.innerHTML="edit✏️"
+e.setAttribute("class","btn-secondary btn-sm");
+pp1.innerHTML=i.value;
+i.classList.toggle("in");
+
+i0.style.visibility="hidden"; 
+}
+
+else{
+console.log("[[[i]]]");
+
+
+}
+
+}
+/*
+function edi(e) {
+ e.innerHTML="save"
+var i=document.getElementById("inp");
+i.classList.toggle("in");
+
+if(e.innerHTML==="save"){
+
+var pp=document.getElementById("pp");
+pp.innerHTML=i.value;
+i.classList.toggle("in2");
+}
+}*/
+
+   </script>
+
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
